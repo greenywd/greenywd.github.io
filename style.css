@@ -1,0 +1,18 @@
+.dropdown-item:hover {
+    background-color: lightgrey;
+}
+
+/* TODO: Needs tweaking */
+.dropdown-menu .dropdown-item.active {
+    background-color: lightblue;
+    color: black;
+}
+
+.top-buffer {
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.center {
+    text-align: center;
+}
