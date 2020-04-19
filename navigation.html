@@ -1,27 +1,42 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav navbar-center mx-auto">
+    <span class="navbar-brand w-100" style="color:darkgrey">Thomas Greenwood</span>
+    <div class="collapse navbar-collapse w-100 justify-content-center" id="navbarNavDropdown">
+        <ul class="navbar-nav navbar-center">
             <li class="nav-item" id="home">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" id="projects">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Projects
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="projects/seasons.html">Seasons</a>
-                    <a class="dropdown-item" href="#">Mastodon Client</a>
-                    <a class="dropdown-item" href="#">Something else</a>
+                    <a class="dropdown-item" id="seasons-dropdown-item" href="/projects/seasons.html">Seasons</a>
+                    <a class="dropdown-item" id="masto-dropdown-item" href="/projects/mastoapp.html">Mastodon Client</a>
+                    <a class="dropdown-item" id="music-dropdown-item" href="/projects/musicapp.html">Music Sharing App</a>
+                    <a class="dropdown-item" id="paper-dropdown-item" href="/projects/paperupdater.html">MC Server Updater</a>
                 </div>
             </li>
             <li class="nav-item" id="about">
-                <a class="nav-link" href="about.html">About Me</a>
+                <a class="nav-link" href="/about.html">About Me</a>
             </li>
         </ul>
     </div>
+    <div class="w-100"></div>
 </nav>
+
+<style>
+    .dropdown-item:hover {
+        background-color: lightgrey;
+    }
+
+    /* TODO: Needs tweaking */
+    .dropdown-menu .dropdown-item.active {
+        background-color: lightblue;
+        color: black;
+    }
+</style>
