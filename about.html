@@ -76,7 +76,7 @@
     // Load navbar from navigation.html
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'navigation.html', true);
-    xhr.onreadystatechange = function () {
+    xhr.onload = function () {
         if (this.status !== 200) return;
         document.getElementById('navigation').innerHTML = this.responseText;
         document.getElementById("about").classList.add("active")
