@@ -1,5 +1,5 @@
 .dropdown-item:hover {
-    background-color: lightgrey;
+    background-color: aliceblue;
 }
 
 /* TODO: Needs tweaking */
@@ -16,3 +16,19 @@
 .center {
     text-align: center;
 }
+
+body {
+    background-color: F8F9FA;
+}
+
+/* @media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #343A40;
+    }
+} */
