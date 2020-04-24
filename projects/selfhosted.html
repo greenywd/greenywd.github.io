@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Self-Hosted - Thomas Greenwood</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+    <!-- Navbar loaded in this div -->
+    <div id="navigation"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="top-buffer">
+                <h1>Self-Hosted</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <p class="text-left">As I've spent quite a considerable amount of time regarding self-hosting, let's go in
+                depth about what I'm running and why!</p>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h3>Why & how?</h3>
+                <p>
+                    After realising that trying to run everything I wanted on one (logically speaking) OS was going to
+                    be a huge pain, I looked for alternatives. Using Virtual Machines was obviously one way of going
+                    about it, but that would require a fair bit of power (which at the time my home server didn't have a
+                    lot of). Eventually I came across Docker, which long story short, has been working fantastically for
+                    me. I've been using <a href="https://docs.docker.com/compose/">docker-compose</a> to manage my
+                    containers in such a way that if I needed to migrate them, it would be very straightforward
+                    (utilising volumes).
+                </p>
+                <p>
+                    Accessing anything from the public internet required a bit of research as my ISP has put me in a
+                    CGNAT, meaning that I'm unable to do any sort of port forwarding which is what would usually be
+                    done to access resources from other networks. To get around this restriction, I have an AWS instance
+                    with an Elastic IP running under free-tier which has a reverse SSH tunnel to my server. A <a
+                        href="https://www.nginx.com/">nginx</a> reverse proxy is then used to serve the required
+                    services to myself while I'm not on my local network. Using both AWS Security Groups and UFW, access
+                    for most services is restricted to a select few subnets to decrease the risk of any attacks.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h3>What am I hosting?</h3>
+                <p>Short story, a lot. Long story, read on! Everything below is running in a docker container, unless
+                    otherwise specified.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h4>GitLab CE + GitLab Runner</h4>
+                <p>
+                    <a href="https://about.gitlab.com/">GitLab</a> offers the ability to host your own instance for
+                    free. As a self-proclaimed software
+                    developer, having a private git instance is pretty dang useful. I'm using it to host all of my
+                    personal projects that actually get created so that I can both access them from pretty much
+                    anywhere, and have them managed with version control. I also recently setup CI/CD for one of my
+                    projects, which included deploying <a href="https://docs.gitlab.com/runner/">GitLab Runner</a> to
+                    run those CI/CD jobs. Needless to say, GitLab works like a charm!
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h4>Unifi Controller</h4>
+                <p>
+                    As I own a Unifi Access Point, the <a href="https://www.ui.com/software/">Unifi Controller</a>
+                    software is a necessity to have. Admittedly, I haven't done much outside of the initial setup of the
+                    AP and creating a guest wireless network, however as more Unifi hardware is eventually introduced
+                    into my network the controller will become much more valuable. Nevertheless, it's a huge step up
+                    from our ISP issued all-in-one.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h4>Bitwarden</h4>
+                <p>
+                    <a href="https://bitwarden.com/">Bitwarden</a> is a password manager. Need I say more? I originally
+                    used <a href="https://keepass.info/">KeePass</a> however I wanted something that was more accessible
+                    but didn't compromise on security. I believe Bitwarden fills that requirement, offering a web
+                    interface and an official app. Bitwarden have <a
+                        href="https://bitwarden.com/blog/post/third-party-security-audit/">completed third-party
+                        security audits</a>, which is always a good sign for a service that handles passwords and other
+                    sensitive information. As I'm hosting it myself, all of my passwords are stored on my server instead
+                    of on Bitwarden's infrastructure. Not that I don't trust them, but having control of my own data is
+                    one of the reasons I used KeePass in the first place. As a bonus, they also support <a
+                        href="https://www.yubico.com/authentication-standards/fido-u2f/">U2F</a> as a form of 2FA!
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h4>Pi-Hole</h4>
+                <p>
+                    <a href="https://pi-hole.net/">Pi-Hole</a> is a "black hole for Internet advertisements".
+                    Effectively it's a DNS server that sinkholes queries with specific URLs based on your blacklists.
+                    While not having any ads is pretty cool, I do whitelist certain websites that do deserve to serve
+                    ads to me. I also use it to increase my privacy online, by sinking any queries to <a
+                        href="https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/facebook/all">Facebook
+                        URLs</a>. This also blocks Instagram, WhatsApp, etc, but I don't use those so it doesn't bother
+                    me
+                    (just a side effect to be aware of).
+                </p>
+                <p>
+                    I also have Pi-Hole hosted on my VPN server, which is used exclusively for VPN clients (no open
+                    resolvers here!).
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h4>Heimdall</h4>
+                <p>
+                    <a href="https://heimdall.site/">Heimdall</a> is an application dashboard which I use to quickly
+                    get access to services that I host or are on my local network. Not much else to say other than it
+                    does it's job.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h4>Ouroboros</h4>
+                <p>
+                    Another short one, <a href="https://github.com/pyouroboros/ouroboros">Ouroboros</a> keeps all of my
+                    containers up to date.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h4>ZNC</h4>
+                <p>
+                    I'm one of those people that <i>still</i> use IRC, so <a href="https://wiki.znc.in/ZNC">ZNC</a> is
+                    pretty much required. I use it to stay connected to the servers that I frequent so that I get some
+                    message history, and I don't spam every channel with join and leave messages.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h4>Wireguard</h4>
+                <p>
+                    Technically not self-hosted, but I figured I would include it in the list as it supports the ability
+                    of being able to access my hosted services from the public internet.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h4>Minecraft Servers</h4>
+                <p>
+                    From time to time, my friends and I hop on to play some Minecraft. Obviously to do this, we need to
+                    connect to a server, and hosting one myself gives us the freedom to do whatever we want with it. I
+                    also use my own <a href=paperupdater.html>script</a> to automatically update my servers
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    // Load navbar from navigation.html
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '../navigation.html', true);
+    xhr.onreadystatechange = function () {
+        if (this.status !== 200) return;
+        document.getElementById('navigation').innerHTML = this.responseText;
+        document.getElementById("projects").classList.add("active")
+        document.getElementById("selfhosted-dropdown-item").classList.add("active")
+    };
+    xhr.send();
+</script>
