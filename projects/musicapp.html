@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 
@@ -13,15 +14,101 @@
     <!-- Navbar loaded in this div -->
     <div id="navigation"></div>
 
+    <div class="container">
+        <div class="row">
+            <div class="top-buffer">
+                <h1>Music Sharing App</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <p class="text-left">An iOS Application to share Music via Apple Music or Spotify URLs.</p>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h3>Why?</h3>
+                <p>
+                    To preface, I'm one of those weirdos who still syncs music to their phone.
+                </p>
+                <p>
+                    I have a lot of friends who love music and sharing what I'm currently listening to with them isn't
+                    possible (due to me manually syncing music to my phone). This project initially started as a way to
+                    share the album artwork of whatever song you're listening to in the native iOS music app, however
+                    soon expanded to more than just sharing artwork.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h3>Features</h3>
+                <p>
+                    One of the first things I did was implement an iMessage Extension to very easily share what I'm
+                    listening to with a tap (plus one more to send). What got shared was an image with the name of the
+                    song and artist.
+                </p>
+                <figure>
+                    <img src="/images/musicapp/screenshot-imessage-extension.jpg"
+                        alt="Album artwork of now playing song" class="rounded mx-auto d-block" width="300">
+                    <figcaption class="center"><i>iMessage Extension</i></figcaption>
+                </figure>
+                <p>
+                    The actual app doesn't look that good (in my opinion anyway), and I've been meaning to redesign it
+                    but there's nothing horrible about it. Eventually, I added the ability to get an Apple Music or
+                    Spotify URL to what I'm currently listening to (again, local file). Surprisingly, getting the first
+                    search result of "artist" + "song" is a fairly accurate way of getting the respective URL from a
+                    streaming platform.
+                </p>
+
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <img src="/images/musicapp//screenshot-ui.jpg" alt="Album artwork of now playing song"
+                                class="rounded mx-auto d-block" width="300">
+                            <figcaption class="top-buffer center"><i>Screenshot of UI</i></figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col">
+                        <figure>
+                            <img src="/images/musicapp/screenshot-context-ui.jpg"
+                                alt="Context menu with actions to share now playing song/album"
+                                class="rounded mx-auto d-block" width="300">
+                            <figcaption class="top-buffer center"><i>Context Menu to Share</i></figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="top-buffer">
+                <h3>Links</h3>
+                <p>As with many of my projects, Seasons is fully open source and available at GitHub.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="btn-group">
+                <a href="https://github.com/greenywd/NowPlaying" alt="Open on GitHub"
+                    class="btn btn-dark btn-primary active" target="_blank">
+                    <img src='/images/github-mark-light.png' style='padding-right: 5px;'> Open on GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 <script>
