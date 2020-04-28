@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blackjack - Thomas Greenwood</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <!-- Navbar loaded in this div -->
+    <div id="navigation"></div>
+
+    <div class="container pb-4">
+        <div class="row">
+            <div class="pt-3">
+                <h1>Blackjack in Python</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <p class="text-left">An implementation of Blackjack in Python 3.</p>
+        </div>
+
+        <div class="row">
+            <div class="pt-3">
+                <h3>Description</h3>
+                <p>
+                    For the very first programming assignment, we were required to write a Python program that allows a
+                    player to play a game of Blackjack against the computer. The program allowed a player to play as
+                    many games of Blackjack as they wish.
+                </p>
+                <p>
+                    We were given a helper module that included the cards and a playing deck. Additionally, it also
+                    included functions to check whether the deck is empty, to reset the deck and to deal one card. We
+                    were also given a specific set of rules that our assignments would abide by.
+                </p>
+                <p>
+                    With that, we set off to recreate Blackjack in Python.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="pt-3">
+                <h3>Implementation</h3>
+                <p>
+                    As I had some prior experience with Python, I went a little overboard with my own assignment. The
+                    assignment specified a number of functions we had to implement, such as display_hand, get_hand_total
+                    and get_hit_choice. As this was the very first programming assignment, nothing complicated was used.
+                    I used lists, dictionaries, loops, subscripting, string concatenation, booleans and more to
+                    implement the required functions.
+
+                    After implementing the required functions, it was fairly simple to begin
+                    implementing the rules of Blackjack. At the end of the game, the user is prompted whether they would
+                    like to play again. If they don't statistics are shown that includes the number of games the user
+                    won or lost.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    // Load navbar from navigation.html
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '/navigation.html', true);
+    xhr.onload = function () {
+        if (this.status !== 200) return;
+        document.getElementById('navigation').innerHTML = this.responseText;
+        document.getElementById("projects").classList.add("active")
+        document.getElementById("blackjack-dropdown-item").classList.add("active")
+    };
+    xhr.send();
+</script>
