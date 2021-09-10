@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Paper Updater - Thomas Greenwood</title>
+    <title>Bukkit2Singleplayer - Thomas Greenwood</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,13 +16,12 @@
     <div class="container pb-4">
         <div class="row">
             <div class="pt-3">
-                <h1>Paper Updater</h1>
+                <h1>Bukkit2Singleplayer</h1>
             </div>
         </div>
 
         <div class="row">
-            <p class="text-left">Python script to assist in updating the <a href="https://papermc.io/">Paper</a>
-                Minecraft Server.</p>
+            <p class="text-left">Python script to convert a Bukkit world to a Singleplayer world.</p>
         </div>
 
         <div class="row">
@@ -32,47 +31,26 @@
                     choice is <a href="https://papermc.io/">Paper</a>, a high performance fork of <a
                         href="https://www.spigotmc.org/">Spigot</a>, which is a fork of the
                     <a href="https://getbukkit.org/">CraftBukkit</a> Minecraft Server (I promise it doesn't go any
-                    deeper!). Development of <a href="https://papermc.io/">Paper</a> is very active, with new builds
-                    being released multiple times a day. I soon realised that keeping multiple servers up to date would
-                    become a chore, so I wrote a Python script to automatically update the servers for me.</p>
-                <p>Before long, I ended up with a Python script that fits my needs, and hopefully someone else's!</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="pt-3">
-                <h3>What else can it do?</h3>
-                <p>While the main purpose of this script is to update the server, I wanted to make this script as
-                    customizable as possible so that it can be used in a wide range of
-                    scenarios. A brief list of features can be found below:
-                </p>
-                <p>
-                    &#8226; Rename the downloaded server jar (so that startup scripts, etc don't need to be modified!)
-                    <br>
-                    &#8226; Update multiple servers at once
-                    <br>
-                    &#8226; Restart a server once the server jar has been replaced
-                    <br>
-                    &#8226; List all versions or builds available for the <a href="https://papermc.io/">Paper</a> Server
-                    <br>
-                    &#8226; Download a specific build of a version of the <a href="https://papermc.io/">Paper</a> Server
-                </p>
+                    deeper!). Sometimes I want to load up the server's world in Singleplayer, mainly for testing
+                    purposes. However, Bukkit stores the world with a different directory structure than what's used for
+                    Singleplayer worlds, so unfortunately it's not a simple copy and paste. That's where this script
+                    comes in, it streamlines the process of converting a Multiplayer world to a Singleplayer world.
             </div>
         </div>
 
         <div class="row">
             <div class="pt-3">
                 <h3>Links</h3>
-                <p>As with many of my projects, paper-updater is fully open source and available at GitHub.
+                <p>As with many of my projects, Bukkit2Singleplayer is fully open source and available at GitHub.
                 </p>
             </div>
         </div>
 
         <div class="row">
             <div class="btn-group">
-                <a href="https://github.com/greenywd/paper-updater" alt="Open on GitHub"
+                <a href="https://github.com/greenywd/Bukkit-World-Converter" alt="Open on GitHub"
                     class="btn btn-dark btn-primary active" target="_blank">
-                    <img src='/images/github-mark-light.png' style='padding-right: 5px;'> Open on GitHub
+                    <img src='/images/other/github-mark-light.png' style='padding-right: 5px;'> Open on GitHub
                 </a>
             </div>
         </div>
@@ -97,7 +75,7 @@
         if (this.status !== 200) return;
         document.getElementById('navigation').innerHTML = this.responseText;
         document.getElementById("projects").classList.add("active")
-        document.getElementById("paper-dropdown-item").classList.add("active")
+        document.getElementById("bukkit2singleplayer-dropdown-item").classList.add("active")
     };
     xhr.send();
 </script>

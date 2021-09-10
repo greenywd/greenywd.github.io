@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Website - Thomas Greenwood</title>
+    <title>Blackjack - Thomas Greenwood</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,56 +20,48 @@
     <div class="container pb-4">
         <div class="row">
             <div class="pt-3">
-                <h1>This Website</h1>
+                <h1>Blackjack in Python</h1>
             </div>
         </div>
 
         <div class="row">
-            <p class="text-left">A portfolio of sorts.</p>
+            <p class="text-left">An implementation of Blackjack in Python 3.</p>
         </div>
 
         <div class="row">
             <div class="pt-3">
-                <h3>Why?</h3>
+                <h3>Description</h3>
                 <p>
-                    Long story short, I needed a place to showcase my own projects that I've worked on in my own time. I
-                    figured a basic website would work, as it's nothing too complex to create and I already had some
-                    experience from University in Web Development.
+                    For the very first programming assignment, we were required to write a Python program that allows a
+                    player to play a game of Blackjack against the computer. The program allowed a player to play as
+                    many games of Blackjack as they wish.
+                </p>
+                <p>
+                    We were given a helper module that included the cards and a playing deck. Additionally, it also
+                    included functions to check whether the deck is empty, to reset the deck and to deal one card. We
+                    were also given a specific set of rules that our assignments would abide by.
+                </p>
+                <p>
+                    With that, we set off to recreate Blackjack in Python.
                 </p>
             </div>
         </div>
 
         <div class="row">
             <div class="pt-3">
-                <h3>Technologies</h3>
+                <h3>Implementation</h3>
                 <p>
-                    As you can probably tell, this is a fairly basic website. No databases, no crazy UI/UX,
+                    As I had some prior experience with Python, I went a little overboard with my own assignment. The
+                    assignment specified a number of functions we had to implement, such as display_hand, get_hand_total
+                    and get_hit_choice. As this was the very first programming assignment, nothing complicated was used.
+                    I used lists, dictionaries, loops, subscripting, string concatenation, booleans and more to
+                    implement the required functions.
 
-                    <a href="https://getbootstrap.com/">Bootstrap</a> is the only framework (aside from it's JavaScript
-                    dependencies) used. Not only is it easy to use but I learnt more than the basics in the Web
-                    Development class at Uni, so why not put those skills to good use? As I only need static content
-                    served, I had no reason to not choose <a href="https://pages.github.com/">GitHub Pages</a> for
-                    hosting. It's free, and with a check of a box, a GitHub repository is being used to serve a website.
+                    After implementing the required functions, it was fairly simple to begin
+                    implementing the rules of Blackjack. At the end of the game, the user is prompted whether they would
+                    like to play again. If they don't statistics are shown that includes the number of games the user
+                    won or lost.
                 </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="pt-3">
-                <h3>Links</h3>
-                <p>
-                    As with many of my projects, this website is fully open source and available at GitHub. Not that it
-                    matters as you can inspect the source from your browser, but it's the thought that counts, right?
-                </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="btn-group">
-                <a href="https://github.com/greenywd/greenywd.github.io" alt="Open on GitHub"
-                    class="btn btn-dark btn-primary active" target="_blank">
-                    <img src='/images/github-mark-light.png' style='padding-right: 5px;'> Open on GitHub
-                </a>
             </div>
         </div>
     </div>
@@ -93,7 +85,7 @@
         if (this.status !== 200) return;
         document.getElementById('navigation').innerHTML = this.responseText;
         document.getElementById("projects").classList.add("active")
-        document.getElementById("website-dropdown-item").classList.add("active")
+        document.getElementById("blackjack-dropdown-item").classList.add("active")
     };
     xhr.send();
 </script>
